@@ -3,4 +3,4 @@ project(ProjectDS)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ProjectDS Main.cpp actor_actress.h Menu.h)
+add_executable(ProjectDS Main.cpp actor_actress.h Menu.h BST_actors.h Exceptions_actors.h Files.h)
