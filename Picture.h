@@ -8,34 +8,34 @@
 
 
 struct Picture{
-    std::string name;
-    int year{};
-    int nominations {};
-    int rating{}, metacritic{};
-    float duration;
-    std::string genre1, genre2, release, synopsis;
+    std::string Name;
+    int Year{};
+    int Nominations {};
+    int Rating{}, Metacritic{};
+    float Duration;
+    std::string Genre1, Genre2, Release, Synopsis;
 
 
     explicit Picture (std::vector<std::string>data){
         try{
-                name = data[0];
-                year = stoi(data[1]);
-                nominations = stoi(data[2]) ? data[2] != "-" : 0;
-                rating = stoi (data[3]);
-                duration = stof(data[4]);
-                genre1 = data[5];
-                genre2 = data[6];
-                release = data[7];
-                metacritic = stoi(data[8]);
-                synopsis = data[9];
+                Name = data[0];
+                Year = stoi(data[1]);
+                Nominations = stoi(data[2]) ? data[2] != "-" : 0;
+                Rating = stoi (data[3]);
+                Duration = stof(data[4]);
+                Genre1 = data[5];
+                Genre2 = data[6];
+                Release = data[7];
+                Metacritic = stoi(data[8]);
+                Synopsis = data[9];
         }
         catch (...){
             std::cerr<<"Something went wrong. keep moving...\n";
-            std::cerr<<name<<std::endl;
+            std::cerr<<Name<<std::endl;
         }
     } 
     bool operator < (const Picture&actor) const{
-        return (this->name < actor.name);
+        return (this->Name < actor.Name);
     }
 
 };

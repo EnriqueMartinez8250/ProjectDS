@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "actor_actress.h"
+#include "Picture.h"
 #include "BST_actors.h"
 #include <vector>
 #include <sstream>
@@ -60,6 +61,36 @@ void ReadActorsCsv(string & FilePath, BinarySearchTree<actors> &bst){
 
     }
 
+}
+
+//This is to read the pictures file, formats it, and prints. KVL
+void ReadPicturesCsv(std::string& PicturesFilePath, BinarySearchTree<Picture> &bst){
+    std::ifstream File(PicturesFilePath);
+
+    if(!File.is_open()){
+        std::cerr<<"Input file not found. Filepath: " <<PicturesFilePath<<std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string Line;
+
+
+    while (getline(File, Line)){
+
+
+        if(Line.find("Nominations, Rating, Duration, Genre1")==13)
+            continue;
+
+        vector<string> Tokenize_Lines;
+        tokenize(Line, ',', Tokenize_Lines);
+
+
+        Picture picture(Tokenize_Lines);
+
+        //picture.Insert(picture);
+        bst.Insert(picture);
+
+    }
 }
 
 //his ActressActor is my actor
