@@ -64,7 +64,7 @@ void ReadActorsCsv(string & FilePath, BinarySearchTree<actors> &bst){
 }
 
 //This is to read the pictures file, formats it, and prints. KVL
-void ReadPicturesCsv(std::string& PicturesFilePath, BinarySearchTree<Picture> &bst){
+void ReadPicturesCsv(std::string& PicturesFilePath, BinarySearchTree<Picture> &pictures){
     std::ifstream File(PicturesFilePath);
 
     if(!File.is_open()){
@@ -87,8 +87,8 @@ void ReadPicturesCsv(std::string& PicturesFilePath, BinarySearchTree<Picture> &b
 
         Picture picture(Tokenize_Lines);
 
-        //picture.Insert(picture);
-        bst.Insert(picture);
+        pictures.Insert(picture);
+        pictures.Insert(picture);
 
     }
 }
