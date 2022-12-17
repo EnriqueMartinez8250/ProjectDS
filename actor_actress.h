@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include "BST_actors.h"
 //#include "Files.h"
 
 
@@ -14,7 +15,8 @@ using namespace std;
 struct actors {
     int year;
     string awards, name, film;
-    bool win;
+    bool winner;
+    
 
     //Once we've used the tokenize fx to split our data into its
     //appropriate sections (Year,Award,Winner,Name,Film) then we can
@@ -27,7 +29,7 @@ struct actors {
         //henoks is ActressActor
         year = stoi(Data[0]);
         awards= Data[1];
-        win= stoi(Data[2]);
+        winner= stoi(Data[2]);
         name= Data[3];
         film= Data[4];
     }
@@ -42,7 +44,7 @@ struct actors {
         out<< "Name: " << act.name<<"\n";
         out<<"Film: "<< act.film<<"\n";
         out<<"Award: " <<act.awards<<"\n";
-        out<<"Win: " <<act.win<<"\n";
+        out<<"Win: " <<act.winner<<"\n";
         out<<"Year: "<< act.year<< "\n";
 
         return out;
