@@ -73,3 +73,17 @@ void search_modify_actress_db(BinarySearchTree<actors> & actressdb, const std::s
     // else return -actor/actress not found message to user
 
 }
+
+
+//R7//R8
+void search_delete_actress_db(BinarySearchTree<actors> & actressdb, const std::string & name)
+{
+
+}
+
+
+//R7//R8
+void search_delete_movie_db(BinarySearchTree<Picture> & movies, const std::string & picture_name)
+{
+
+}
