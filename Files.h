@@ -1,18 +1,20 @@
 //
 // Created by Karla Vela on 12/1/22.
 //
+
+
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "actor_actress.h"
+#include "actor_actress.h" //this is what is messing with the struct error//comment and uncomment
 #include "Picture.h"
 #include "BST_actors.h"
 #include <vector>
 #include <sstream>
-
+//
 using namespace std;
 
-//added tokenize function to split the data at every comma. The data
+//added tokenize function to split the data at every comma. Tclhe data
 //is seperated by commas so this will help split them so you can create
 //objects of each type of data to match your class members. KVL
 void tokenize (std::string const &str, const char delim, std::vector <std::string> &out) {
@@ -88,10 +90,14 @@ void ReadPicturesCsv(std::string& PicturesFilePath, BinarySearchTree<Picture> &p
         Picture picture(Tokenize_Lines);
 
         pictures.Insert(picture);
-        pictures.Insert(picture);
+
+        //cout<<picture<<endl;
+        //cout<<"------------------\n";
+        
 
     }
 }
+
 
 //his ActressActor is my actor
 //his actress_actor  is my Actors
